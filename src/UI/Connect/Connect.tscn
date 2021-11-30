@@ -23,23 +23,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+[node name="Server" type="LineEdit" parent="VBoxContainer"]
 margin_top = 88.0
 margin_right = 538.0
 margin_bottom = 112.0
-text = "server"
+text = "xavy.mx"
 
-[node name="LineEdit2" type="LineEdit" parent="VBoxContainer"]
+[node name="Port" type="LineEdit" parent="VBoxContainer"]
 margin_top = 136.0
 margin_right = 538.0
 margin_bottom = 160.0
-text = "port"
+text = "6969"
 
-[node name="LineEdit3" type="LineEdit" parent="VBoxContainer"]
+[node name="Username" type="LineEdit" parent="VBoxContainer"]
 margin_top = 184.0
 margin_right = 538.0
 margin_bottom = 208.0
-text = "username"
+text = "Username"
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 margin_top = 232.0

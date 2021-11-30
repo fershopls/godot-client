@@ -16,13 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="2021 11 29 180630 tcp"
-run/main_scene="res://src/Server/Server.tscn"
+run/main_scene="res://src/UI/Connect/Connect.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Debug="*res://src/Singleton/Debug.gd"
 Helpers="*res://src/Singleton/Helpers.gd"
+Auth="*res://src/Singleton/Auth.gd"
 
 [display]
 

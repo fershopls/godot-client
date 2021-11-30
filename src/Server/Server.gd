@@ -2,18 +2,19 @@ extends Node2D
 
 
 func _ready():
-	if OS.get_cmdline_args().size() > 1:
+	get_tree().connect("network_peer_connected", self, "_player_connected")
+	get_tree().connect("connection_failed", self, "_connection_failed")
+	
+	if Auth.is_server:
 		server()
 	else:
 		client()
-	
-	get_tree().connect("network_peer_connected", self, "_player_connected")
 
 
 func client():
 	print("Creating client")
 	var peer = NetworkedMultiplayerENet.new()
-	peer.create_client('127.0.0.1', 6969)
+	var result = peer.create_client(Auth.server, int(Auth.port))
 	get_tree().network_peer = peer
 	
 	var id = get_tree().get_network_unique_id()
@@ -29,7 +30,13 @@ func server():
 	#get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	#get_tree().connect("connected_to_server", self, "_connected_ok")
 	#get_tree().connect("connection_failed", self, "_connected_fail")
-	#get_tree().connect("server_disconnected", self, "_server_disconnected")
+
+
+
+func _connection_failed():
+	print ('failed')
+	get_tree().change_scene("res://src/UI/Connect/Connect.tscn")
+
 
 func _player_connected(id):
 	print("Connected ", id)

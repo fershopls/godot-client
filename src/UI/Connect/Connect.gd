@@ -1,13 +1,19 @@
 extends Control
 
 
+func _ready():
+	Auth.is_server = OS.get_cmdline_args().size() > 1
+	
+	if Auth.is_server:
+		go_game()
+
+
 func _on_Button_button_up():
-	connect_to("127.0.0.1", 6969, "Ferchito")
+	Auth.server = $VBoxContainer/Server.text
+	Auth.port = $VBoxContainer/Port.text
+	Auth.username = $VBoxContainer/Username.text
+	go_game()
 
 
-func connect_to(server, port, username):
-	var socket = PacketPeerUDP.new()
-	socket.set_dest_address(server, port)
-	socket.put_packet(username.to_ascii())
-	get_tree().quit()
-
+func go_game():
+	get_tree().change_scene("res://src/Server/Server.tscn")
