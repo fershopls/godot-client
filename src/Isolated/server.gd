@@ -2,7 +2,7 @@ extends SceneTree
 
 func _init():
 	var port = 6969
-	var ip = "127.0.0.1"
+	var ip = "0.0.0.0"
 	
 	var done = false
 
