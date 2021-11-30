@@ -2,9 +2,9 @@ extends Control
 
 
 func _ready():
-	Auth.is_server = OS.get_cmdline_args().size() > 1
-	
-	if Auth.is_server:
+	if OS.get_cmdline_args().size() > 1:
+		var type = OS.get_cmdline_args()[1]
+		Auth.is_server = type == 'server'
 		go_game()
 
 
