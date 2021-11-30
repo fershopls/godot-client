@@ -6,10 +6,12 @@ func _init():
 	
 	connect("network_peer_connected", self, "_on_network_peer_connected")
 	
+	var port = int(args[1])
+	
 	if args[0] == "server":
-		server(6969, 5)
+		server(port, 5)
 	else:
-		client('127.0.0.1', 6969)
+		client('134.122.117.174', port)
 
 
 func _on_network_peer_connected(id):
