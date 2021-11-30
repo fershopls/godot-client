@@ -1,6 +1,6 @@
 extends Node
 
-signal moved (position)
+signal moved(position)
 
 func _ready():
 	if not is_network_master():
