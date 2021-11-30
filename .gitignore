@@ -1,8 +1,6 @@
 /assets/*
 /.import/*
 *.log
-*.import
 export_presets.cfg
-*.png
 *.zip
 /releases/*

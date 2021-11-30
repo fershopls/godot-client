@@ -12,7 +12,7 @@ func _ready():
 
 
 func client():
-	print("Creating client")
+	print("Connecting to ", Auth.server, ":", Auth.port)
 	var peer = NetworkedMultiplayerENet.new()
 	var result = peer.create_client(Auth.server, int(Auth.port))
 	get_tree().network_peer = peer
