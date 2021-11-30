@@ -24,7 +24,7 @@ func client():
 func server():
 	print("Server listening")
 	var peer = NetworkedMultiplayerENet.new()
-	peer.set_bind_ip('0.0.0.0')
+	peer.set_bind_ip('134.122.117.174')
 	peer.create_server(6969, 10)
 	get_tree().network_peer = peer
 
