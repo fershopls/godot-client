@@ -1,6 +1,10 @@
 extends SceneTree
 
 func _init():
+	udp()
+
+
+func udp():
 	var port = 6969
 	var ip = "0.0.0.0"
 	
