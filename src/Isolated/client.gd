@@ -1,7 +1,7 @@
 extends SceneTree
 
 func _init():
-	var server = "127.0.0.1"
+	var server = "xavy.mx"
 	var port = 6969
 	
 	var socket = PacketPeerUDP.new()
