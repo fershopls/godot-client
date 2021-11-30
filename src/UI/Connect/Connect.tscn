@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UI/Connect/Connect.gd" type="Script" id=1]
+
+[node name="Connect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 243.0
+margin_top = 130.0
+margin_right = -243.0
+margin_bottom = -130.0
+custom_constants/separation = 24
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+margin_top = 88.0
+margin_right = 538.0
+margin_bottom = 112.0
+text = "server"
+
+[node name="LineEdit2" type="LineEdit" parent="VBoxContainer"]
+margin_top = 136.0
+margin_right = 538.0
+margin_bottom = 160.0
+text = "port"
+
+[node name="LineEdit3" type="LineEdit" parent="VBoxContainer"]
+margin_top = 184.0
+margin_right = 538.0
+margin_bottom = 208.0
+text = "username"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 232.0
+margin_right = 538.0
+margin_bottom = 252.0
+text = "CONNECT"
+[connection signal="button_up" from="VBoxContainer/Button" to="." method="_on_Button_button_up"]
